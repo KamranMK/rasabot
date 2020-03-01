@@ -1,0 +1,98 @@
+intents:
+  - chitchat:
+      use_entities: []
+  - greet
+  - goodbye
+  - inform
+  - affirm
+  - deny
+  - bot_challenge
+  - stop
+  - thankyou
+
+entities:
+  - age
+  - education
+  - investment_horizon
+  - investment_frequency
+
+slots:
+  age:
+    type: unfeaturized
+    auto_fill: false
+  education:
+    type: unfeaturized
+    auto_fill: false
+  investment_horizon:
+    type: unfeaturized
+    auto_fill: false
+  investment_frequency:
+    type: unfeaturized
+    auto_fill: false
+
+
+actions:
+- utter_start_process
+- utter_ask_age
+- utter_ask_education
+- utter_ask_investment_horizon
+- utter_ask_investment_frequency
+- utter_confirm_values
+- utter_goodbye
+- utter_iamabot
+- utter_chitchat
+
+responses:
+  utter_start_process:
+  - text: "Hello and Welcome! My name is Jamie and I am a Investment Robo Advisor.
+          I am here to help you invest your money in a smart way.
+          First let's get to know you. Are you ready?"
+
+  utter_ask_age:
+  - text: "How old are you?"
+
+  utter_ask_education:
+  - text: "What is your highest education level?"
+
+  utter_ask_investment_horizon:
+  - text: "How many months or years you willing to keep your money invested?"
+
+  utter_ask_investment_frequency:
+  - text: "How often are you willing to invest?"
+    buttons:
+      - title: "Never invested"
+        payload: "Never invested"
+      - title: "Yearly"
+        payload: "Yearly"
+      - title: "Monthly"
+        payload: "Monthly"
+
+  utter_confirm_values:
+  - text: "Just to confirm here are your responses: \n
+            your age: {age} \n
+            your education: {education} \n
+            your investment horizon: {investment_horizon}
+            your investment frequency: {investment_frequency}"
+
+  utter_working_on_it:
+  - text: "Thank you for the input. Let me crunch some numbers and identify your risk profile."
+
+  utter_goodbye:
+  - text: "Thank you & have a nice day!"
+
+  utter_chitchat:
+  - text: chitchat
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_submit:
+  - text: "All done!"
+
+forms:
+ - detect_risk_profile_form
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
