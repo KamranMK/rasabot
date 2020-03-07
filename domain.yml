@@ -75,7 +75,7 @@ responses:
   - text: "Just to confirm here are your responses: \n
             your age: {age} \n
             your education: {education} \n
-            your investment horizon: {investment_horizon}
+            your investment horizon: {investment_horizon} \n
             your investment frequency: {investment_frequency}"
 
   utter_working_on_it:

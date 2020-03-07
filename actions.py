@@ -69,7 +69,7 @@ class DetectRiskProfileForm(FormAction):
 
 
 class DetectRiskProfile(Action):
-    """Detect the users dialect"""
+    """Detect the users risk profile"""
 
     def name(self) -> Text:
         """Unique identifier of the form"""
@@ -77,7 +77,8 @@ class DetectRiskProfile(Action):
         return "detect_risk_profile"
 
     def run(self, dispatcher, tracker, domain):
-        """place holder method for guessing dialect """
+        """place holder method for identifying risk profile """
+
         # let user know the risk profile identification is running
         dispatcher.utter_message(template="utter_working_on_it")
 
@@ -87,7 +88,7 @@ class DetectRiskProfile(Action):
         investment_horizon = tracker.get_slot("investment_horizon")
         investment_frequency = tracker.get_slot("investment_frequency")
 
-        database = pd.read_csv("database/demo_database.csv")
+        # database = pd.read_csv("database/demo_database.csv")
 
         # always guess US for now
         return [SlotSet("risk_profile", "balanced")]

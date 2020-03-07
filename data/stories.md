@@ -6,7 +6,7 @@
   - form{"name": "detect_risk_profile_form"}
   - form{"name": null}
   - utter_confirm_values
-  - utter_working_on_it
+  - detect_risk_profile
   - utter_risk_profile
 * thankyou
 
