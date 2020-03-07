@@ -29,6 +29,9 @@ slots:
   investment_frequency:
     type: unfeaturized
     auto_fill: false
+  risk_profile:
+    type: unfeaturized
+    auto_fill: false
 
 
 actions:
@@ -41,6 +44,7 @@ actions:
 - utter_goodbye
 - utter_iamabot
 - utter_chitchat
+- detect_risk_profile
 
 responses:
   utter_start_process:
@@ -76,6 +80,9 @@ responses:
 
   utter_working_on_it:
   - text: "Thank you for the input. Let me crunch some numbers and identify your risk profile."
+
+  utter_risk_profile:
+  - text: "Your risk profile based on your responses is {risk_profile}"
 
   utter_goodbye:
   - text: "Thank you & have a nice day!"
